@@ -18,7 +18,7 @@ export default function Dashboard() {
     } catch (err) {
       console.error('Fetch tasks error:', err.response || err);
       
-      // If unauthorized → redirect to login
+      
       if (err.response?.status === 401) {
         toast.error('Session expired. Please login again.');
         navigate('/login');
@@ -38,7 +38,7 @@ export default function Dashboard() {
       await API.post('/tasks', newTask);
       toast.success('Task created successfully!');
       setNewTask({ title: '', description: '' });
-      fetchTasks(); // Refresh list
+      fetchTasks(); 
     } catch (err) {
       toast.error(err.response?.data?.message || 'Failed to create task');
     }
@@ -54,7 +54,7 @@ export default function Dashboard() {
     }
   };
 
-  // Load tasks on mount
+  
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -74,7 +74,7 @@ export default function Dashboard() {
       </header>
 
       <main className="max-w-6xl mx-auto p-8">
-        {/* Create Task Form */}
+    
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <h2 className="text-2xl font-semibold mb-4">Create New Task</h2>
           <form onSubmit={handleCreate} className="space-y-4">
@@ -102,7 +102,7 @@ export default function Dashboard() {
           </form>
         </div>
 
-        {/* Tasks List */}
+        
         <h2 className="text-2xl font-semibold mb-6">Your Tasks</h2>
 
         {loading ? (
