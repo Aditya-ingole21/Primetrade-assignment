@@ -10,14 +10,14 @@ Includes a responsive React frontend to demonstrate full CRUD operations and pro
 
 ### Dashboard (Task Management)
 
-<grok-card data-id="364710" data-type="image_card"></grok-card>
+<img width="1862" height="874" alt="Screenshot 2025-12-14 160030" src="https://github.com/user-attachments/assets/5e24de2d-396a-473f-a02f-f42c061b27f7" />
 
 
-### Swagger API Documentation
+### Swagger API Documentation!
 
-<grok-card data-id="b15daa" data-type="image_card"></grok-card>
+<img width="1881" height="897" alt="Screenshot 2025-12-14 160110" src="https://github.com/user-attachments/assets/ebf40089-4c75-4add-90f1-7116097766eb" />
 
-
+<img width="1876" height="893" alt="Screenshot 2025-12-14 160055" src="https://github.com/user-attachments/assets/5eba8171-9eaf-4e7b-a1bf-003a991cba70" />
 
 
 
