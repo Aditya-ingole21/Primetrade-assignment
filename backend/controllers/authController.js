@@ -36,8 +36,12 @@ exports.register = async (req, res) => {
     if (userExists) {
       return res.status(400).json({ success: false, message: 'User already exists' });
     }
-
-    const user = await User.create({ name, email, password, role });
+const user = await User.create({ 
+  name, 
+  email, 
+  password, 
+  role: 'user'  // hardcoded
+});
     sendTokenResponse(user, 201, res);
   } catch (err) {
     res.status(400).json({ success: false, message: err.message });
