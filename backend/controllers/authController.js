@@ -26,8 +26,7 @@ const sendTokenResponse = (user, statusCode, res) => {
   });
 };
 
-// @desc    Register user
-// @route   POST /api/v1/auth/register
+
 exports.register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -48,8 +47,7 @@ const user = await User.create({
   }
 };
 
-// @desc    Login user
-// @route   POST /api/v1/auth/login
+
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -69,8 +67,7 @@ exports.login = async (req, res) => {
   }
 };
 
-// @desc    Logout user
-// @route   POST /api/v1/auth/logout
+
 exports.logout = (req, res) => {
   res.cookie('token', 'none', {
     expires: new Date(Date.now() + 10 * 1000),

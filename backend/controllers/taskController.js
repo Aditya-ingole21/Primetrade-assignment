@@ -1,7 +1,6 @@
 const Task = require('../models/Task');
 
-// @desc    Get all tasks (admin: all, user: own)
-// @route   GET /api/v1/tasks
+
 exports.getTasks = async (req, res) => {
   try {
     const query = req.user.role === 'admin' ? {} : { user: req.user._id };
@@ -12,8 +11,7 @@ exports.getTasks = async (req, res) => {
   }
 };
 
-// @desc    Create task
-// @route   POST /api/v1/tasks
+
 exports.createTask = async (req, res) => {
   try {
     req.body.user = req.user._id;
@@ -24,8 +22,7 @@ exports.createTask = async (req, res) => {
   }
 };
 
-// @desc    Update task
-// @route   PUT /api/v1/tasks/:id
+
 exports.updateTask = async (req, res) => {
   try {
     let task = await Task.findById(req.params.id);
@@ -33,7 +30,7 @@ exports.updateTask = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Task not found' });
     }
 
-    // Check ownership or admin
+    
     if (task.user.toString() !== req.user._id.toString() && req.user.role !== 'admin') {
       return res.status(403).json({ success: false, message: 'Not authorized' });
     }
@@ -49,8 +46,7 @@ exports.updateTask = async (req, res) => {
   }
 };
 
-// @desc    Delete task
-// @route   DELETE /api/v1/tasks/:id
+    
 exports.deleteTask = async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
